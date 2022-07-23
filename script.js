@@ -33,7 +33,7 @@ function pop(b) {
     sessionStorage.popcount = Number(sessionStorage.popcount) + 1;
   }
   else {
-    sessionStorage.popcount = 0;
+    sessionStorage.popcount = 1;
   }
   document.getElementById('counter').innerHTML = sessionStorage.popcount;
   setTimeout(function() {
