@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+
+#wrapper {
+  background:#fae3e3;
+  width:100%;
+  height:100%;
+  position:fixed;
+  top:0;
+  left:0;
+}
+
+.balloon-container {
+  position:relative;
+}
+
+.balloon {
+  width:55px;
+  height:65px;
+  border-radius:50%;
+  background-color:currentColor;
+  box-shadow: -6px -6px 1px rgba(0,0,0,.1) inset;
+  position:absolute;
+  top:95%;
+  margin:20px;
+  display:inline-block;
+  color:pink;
+  transition: top linear;
+  left:0;
+  cursor:pointer;
+}
+
+.balloon-rise {
+  top:0%;
+}
+
+.balloon::before {
+  content:"▲";
+  color:inherit;
+  position:absolute;
+  bottom:-10px;
+  text-align:center;
+  width:100%;
+  font-size:16px;
+}
+
+.balloon::after {
+  content:"";
+  position:absolute;
+  left:50%;
+  width:1px;
+  height:80px;
+  top:70px;
+  background:rgba(0,0,0,.1);
+}
+
+.balloon-popped {
+  animation: popped .1s forwards;
+} 
+
+@keyframes popped {
+  0% {
+    opacity:1;
+    transform:scale(100%);
+  }
+  50% {
+    opacity:1;
+    transform:scale(110%);
+  }
+  51% {
+    opacity:0;
+  }
+  90% {
+    opacity:0;
+    }
+  100% {
+    opacity:0;
+  }
+}
+
+#click {
+  user-select:none;
+  cursor:pointer;
+}
+.balloon-button {
+  width:10%;
+  text-align:center;
+  margin:auto;
+  position:relative;
+  top:40%;
+  z-index:1;
+}
+
+#pop-counter {
+  border-top:dashed 2px #A5A512;
+  border-bottom:dashed 2px #A5A512;
+  position:absolute;
+  text-align:center;
+  padding:20px 70px;
+  top:-150px;
+  left:-265px;
+  transform:rotate(-45deg);
+  margin:auto;
+  z-index:-1;
+  transition:ease 1s;
+}
+
+#pop-counter::before {
+  content:"";
+  position:absolute;
+  top:-6px;
+  left:0;
+  width:100%;
+  height:100%;
+  padding:5px;
+  background:rgba(250, 250, 210,.8);
+  z-index:-99999;
+}
+
+/*.test {
+  border-top:dashed 2px #A5A512;
+  border-bottom:dashed 2px #A5A512;
+  position:absolute;
+  text-align:center;
+  padding:20px 70px;
+  top:-150px;
+  left:-265px;
+  transform:rotate(-45deg);
+  margin:auto;
+  z-index:1;
+}
+*/
