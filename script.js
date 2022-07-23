@@ -18,9 +18,9 @@ function releaseBalloon() {
 }
 
 function pop(b) {
-  var pop1 = new Audio('https://res.cloudinary.com/ginahenderson/video/upload/v1632229827/Balloon_popping___burst___blast_92DC362-MMB_ljrs1v.mp3');
-  var pop2 = new Audio('https://res.cloudinary.com/ginahenderson/video/upload/v1632229827/Balloon_popping___burst___blast_DCAF719-MMB_exvenf.mp3');
-  var pop3 = new Audio('https://res.cloudinary.com/ginahenderson/video/upload/v1632229827/Balloon_popping___burst___blast_3F7BE70-MMB_i4bv11.mp3');
+  var pop1 = new Audio('pop1.mp3');
+  var pop2 = new Audio('pop2.mp3');
+  var pop3 = new Audio('pop3.mp3');
   var popSounds = [pop1, pop2, pop3];
   b.classList.add('balloon-popped');
   function playPop() {
