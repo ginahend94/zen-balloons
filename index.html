@@ -1,22 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Zen Balloons</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Zen Balloons</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  <script src="script.js" defer></script>
 </head>
+
 <body>
   <div id="wrapper">
-    <div class="balloon-button">
-      <span id="click" onclick="releaseBalloon()" title="click for balloons">→&#127880;←</span>
+    <div class="balloon-button balloon mini">
+      <span id="click" onclick="releaseBalloon()" title="click for balloons" class=""></span>
     </div>
     <div id="pop-counter" class="test">
-      Balloons popped: <span id="counter"> </span>
+      Balloons popped: <span id="counter"></span>
     </div>
+    <div class="title">Click the balloon to start</div>
+  </div>
+  <div class="pause" data-playing="true">PAUSE</div>
+  <div class="menu-container">
+    <ul class="menu">
+      <li>About</li>
+      <li>Reset</li>
+      <li>Sound On</li>
+      <li>Back to game</li>
+    </ul>
   </div>
 </body>
+
 </html>

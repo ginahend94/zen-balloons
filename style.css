@@ -1,12 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
 
 #wrapper {
-  background:#fae3e3;
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,1) 2%, rgba(150,198,215,1) 85%, rgba(90,96,166,1) 100%);
   width:100%;
   height:100%;
   position:fixed;
   top:0;
   left:0;
+}
+
+@keyframes float {
+  0% {
+    transform:translateY(-5px);
+  }
+  50% {
+    transform:translateY(5px);
+  }
+  100% {
+    transform:translateY(-5px);
+  }
+}
+
+.title {
+  font-family: 'Big Shoulders Display';
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  font-size: 3rem;
+  color:rgba(255,255,255,.5);
+  pointer-events: none;
+  user-select: none;
+  animation: float 4s ease-in-out infinite;
+  opacity:1;
+  transition:1.5s;
+  top:0px;
+  margin-top: 50px;
+}
+.title.disappear {
+  opacity:0;
+  top:-100px;
 }
 
 .balloon-container {
@@ -29,8 +62,35 @@
   cursor:pointer;
 }
 
+.balloon.mini {
+  width:30px;
+  height: 35px;
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  margin: auto;
+  left:0;
+  right: 0;
+  transition: box-shadow 1s;
+}
+.balloon.mini::before {
+  position: absolute;
+  bottom: -13px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: -1;
+}
+.balloon.mini::after {
+  top:43px;
+  height: 40px;
+}
+.balloon.mini:hover {
+  box-shadow: -6px -6px 1px rgba(0,0,0,.1) inset, 0 0 10px 10px rgba(255,255,255,.5);
+}
+
 .balloon-rise {
-  top:0%;
+  top:-100%;
 }
 
 .balloon::before {
@@ -116,16 +176,49 @@
   z-index:-99999;
 }
 
-/*.test {
-  border-top:dashed 2px #A5A512;
-  border-bottom:dashed 2px #A5A512;
-  position:absolute;
-  text-align:center;
-  padding:20px 70px;
-  top:-150px;
-  left:-265px;
-  transform:rotate(-45deg);
-  margin:auto;
-  z-index:1;
+.menu-container, .pause {
+  font-family: 'Big Shoulders Display';
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color:rgba(255,255,255,.5); 
+  /* background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,1) 2%, rgba(150,198,215,1) 85%, rgba(90,96,166,1) 100%); */
 }
-*/
+
+.menu-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left:0;
+  right: 0;
+  height: 100vh;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.pause {
+  font-size: 1rem;
+  position: absolute;
+  right: 10px;
+  top:10px;
+  opacity:1;
+  cursor: pointer;
+  transition: .2s;
+}
+.pause:hover {
+  color:white;
+}
+.menu {
+  margin:auto;
+  padding: 0;
+  display: none;
+}
+.menu li {
+  margin:15px;
+  list-style: none;
+  text-shadow: 2px 2px 3px rgba(0,0,0,.1);
+}
+
+.paused {
+  animation-play-state: paused !important;
+}
